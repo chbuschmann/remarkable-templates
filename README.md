@@ -39,9 +39,9 @@ You can now access your tablet wirelessly.
 - Then we need to make the system writable with: `mount -o remount,rw /`
 
 The `mount -o remount,rw /` command changes the file system’s state to read-write, allowing you to write to the file system.
-	•	`-o remount`: This part of the command tells the system to “remount” the file system without unmounting it first.
-	•	`rw`: This option sets the file system to read-write mode.
-	•	`/`: This refers to the root directory, meaning you’re remounting the root file system with read-write permissions.
+- `-o remount`: This part of the command tells the system to “remount” the file system without unmounting it first.
+- `rw`: This option sets the file system to read-write mode.
+- `/`: This refers to the root directory, meaning you’re remounting the root file system with read-write permissions.
 
 Now we have access to the system and can copy, paste and delete to our hearts content. 
 
