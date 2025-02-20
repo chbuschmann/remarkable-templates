@@ -5,7 +5,7 @@ https://www.davisr.me/projects/rcu/
 If you want to do it on your own, here is how:
 
 ## Step 1
-- First we need to enable access via SSH. This is partially described here: https://support.remarkable.com/s/article/Developer-mode but without handrails. Lets spell it out step by step:
+First we need to enable access via SSH. This is partially described here: https://support.remarkable.com/s/article/Developer-mode but without handrails. Lets spell it out step by step:
 - We need to enable Developer Mode:
 `Settings -> General -> Software -> Advanced`
 
@@ -20,10 +20,8 @@ Ergo: Make sure you either have your device and documents either backed up, sync
 `rm-ssh-over-wlan on`
 
 - Connect your tablet via usb to your workhorse of choice, i'm on macOS so adjust your workflow as needed.
-Open your terminal and write:
-
-`ssh root@[IP]`
-Mine was `root@10.0.0.223`
+Open your terminal and write: `ssh root@[IP]`
+Mine turned out to be: `root@10.0.0.223`
 
 - Enter the password when prompted.
 
@@ -31,17 +29,14 @@ Et voila! Your terminal will display something like this: `root@imx8mm-ferrari:~
 Ferrari is the internal codename of the operating system, or something similar.
 
 ## Step 2
-
 We are insided the lions den, but we need to do a few more steps:
-
 - First we enable ssh access wireless. This way we dont need the USB connection. 
 
 `rm-ssh-over-wlan on`
 
 You can now access your tablet wirelessly. 
 
-- Then we need to make the system writable with:
-`mount -o remount,rw /`
+- Then we need to make the system writable with: `mount -o remount,rw /`
 
 The `mount -o remount,rw /` command changes the file system’s state to read-write, allowing you to write to the file system.
 	•	`-o remount`: This part of the command tells the system to “remount” the file system without unmounting it first.
@@ -51,7 +46,6 @@ The `mount -o remount,rw /` command changes the file system’s state to read-wr
 Now we have access to the system and can copy, paste and delete to our hearts content. 
 
 ## Optional: Cyberduck
-
 If you know your way around the terminal, ie vim/nano and scp you are all good from here. The files you want are in: `/usr/share/remarkable`.
 
 If you're like me and find navigating the terminal all by text a hassel rest assured, there are ways around this. Cyberduck is my weapon of choice. It gives you a GUI that lets you browse files and folders like on your desktop.
@@ -59,11 +53,10 @@ If you're like me and find navigating the terminal all by text a hassel rest ass
 Download Cyberduck from https://cyberduck.io, open a new connection, choose SFTP and enter your ip, user (`root`) and password. Navigate to `/usr/share/remarkable` and be careful. You can delete files, and there is no Bin to save you.
 
 ## Templates
+- You have to have a .svg file, and you need to edit the templates.json. When i was using RCU it also created a .png but I tried with just the .svg and it worked fine.
 
-You have to have a .svg file, and you need to edit the templates.json. When i was using RCU it also created a .png but I tried with just the .svg and it worked fine.
-
-Copy your new template(s) into `/usr/share/remarkable/templates`.
-With a text editor edit the .json as follows:
+- Copy your new template(s) into `/usr/share/remarkable/templates`.
+-With a text editor edit the .json as follows:
 
 This is the three last entries of my .json to give you an idea of the formating. This first of the three is one of the factory templates, the two last is my own. 
 
@@ -100,7 +93,7 @@ This is the three last entries of my .json to give you an idea of the formating.
 
 The iconCodes can be found here: https://www.reddit.com/r/RemarkableTablet/comments/j75nis/reference_image_template_icon_codes_for_23016/
 
-After this you need to either restart you tablet, or just run this in your terminal:
+- After this you need to either restart you tablet, or just run this in your terminal:
 `systemctl restart xochitl`
 
 `xochitl` is the operating system, as far as i understand it, and this command simply reloads it. Lots faster then a full system reboot.
