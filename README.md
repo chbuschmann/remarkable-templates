@@ -1,4 +1,11 @@
-# SSH
+# TODO
+- [ ] Gather scripts
+- [ ] Gather tutorials for prosperity 
+- [ ] Gather splash screens for inspiration
+- [ ] Sort content by models
+- [ ] 
+
+# Preamble
 Before we start, there is a piece of software that does all of this. Its called RCU. It is quite cheap and good. Just buy it and rejoice. 
 https://www.davisr.me/projects/rcu/
 
